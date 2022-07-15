@@ -34,21 +34,21 @@ function getPlayerSelection() {
 
 function resolveGame() {
     if (computerMove === "Rock" && playerMove === "Paper") {
-        console.log("You win!");
+        return "You win!";
     } else if (computerMove === "Rock" && playerMove === "Scissor") {
-        console.log("The computer wins!");
+        return "The computer wins!";
     } else if (computerMove === "Paper" && playerMove === "Rock") {
-        console.log("The computer wins!");
+        return "The computer wins!";
     } else if (computerMove === "Paper" && playerMove === "Scissor") {
-        console.log("You win!");
+        return "You win!";
     } else if (computerMove === "Scissor" && playerMove === "Rock") {
-        console.log("You win!");
+        return "You win!";
     } else if (computerMove === "Scissor" && playerMove === "Paper") {
-        console.log("The computer wins!")
+        return "The computer wins!"
     } else if (computerMove === playerMove) {
-        console.log("This is a Draw!");
+        return "This is a Draw!";
     } else {
-        console.log("The game could not be played, enter a valid input.")
+        return "The game could not be played, enter a valid input."
     }
 }
 
@@ -56,4 +56,4 @@ console.log("Here is a simple (R)ock, (P)aper, (S)cissor game.");
 
 getPlayerSelection();
 getComputerChoice();
-resolveGame();
+console.log(resolveGame());
