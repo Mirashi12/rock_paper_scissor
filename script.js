@@ -12,5 +12,21 @@ function getComputerChoice() {
     }
 }
 
+function getPlayerSelection() {
+    let playerChoice = prompt("Enter R for Rock, P for Paper, S for Scissor").toLowerCase();
+    
+    if (playerChoice == "r") {
+        let playerMove = "Rock";
+        console.log(`You chose ${playerMove}.`);
+    } else if (playerChoice == "p") {
+        let playerMove = "Paper";
+        console.log(`You chose ${playerMove}.`);
+    } else if (playerChoice == "s") {
+        let playerMove = "Scissor";
+        console.log(`You chose ${playerMove}.`);
+    }  
+}
+
 console.log("Here is a simple (R)ock, (P)aper, (S)cissor game.");
 getComputerChoice();
+getPlayerSelection();
