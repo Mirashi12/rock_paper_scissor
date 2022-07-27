@@ -1,7 +1,7 @@
 let playerMove;
 let computerMove;
 let h1_score = document.createElement('h1');
-let div_display = document.querySelector('#score-display');
+let result_display = document.querySelector('#result');
 
 function resolveGame() {
     playerMove = this.playerMove;
@@ -34,7 +34,7 @@ function resolveGame() {
         h1_score.textContent= "The game could not be played, enter a valid input."
     };
 
-    div_display.appendChild(h1_score);
+    result_display.replaceWith(h1_score);
 }
 
 const btn_rock = document.getElementById("btn-rock");

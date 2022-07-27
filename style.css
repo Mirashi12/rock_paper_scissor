@@ -1,0 +1,46 @@
+* {
+}
+
+body {
+    background-color: #191b1c;
+}
+
+.title {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 50px;
+}
+
+#score-display {
+    margin-top: 100px;
+    height: 200px;
+}
+
+.player-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+img {
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+}
+
+img:hover {
+    animation-name: bounce;
+    animation-timing-function: ease;
+}
+    @keyframes bounce {
+        0%   { transform: translateY(0); }
+        50%  { transform: translateY(-20px); }
+        100% { transform: translateY(0); }
+}
+
+
+h1 {
+    color: whitesmoke;
+    text-align: center;
+}
