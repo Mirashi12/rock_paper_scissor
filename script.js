@@ -10,13 +10,10 @@ function resolveGame() {
     let computerRandom = Math.floor(Math.random() * 3);
     if (computerRandom == 0) {
         computerMove = "Rock";
-        console.log(`The computer chose ${computerMove}.`);
     } else if (computerRandom == 1) {
         computerMove = "Paper";
-        console.log(`The computer chose ${computerMove}.`);
     } else if (computerRandom == 2) {
         computerMove = "Scissor";
-        console.log(`The computer chose ${computerMove}.`);
     }
 
     if (computerMove === "Rock" && playerMove === "Paper") {
