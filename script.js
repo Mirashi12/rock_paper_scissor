@@ -1,7 +1,12 @@
 let playerMove;
 let computerMove;
+let h1_score = document.createElement('h1');
+let div_display = document.querySelector('#score-display');
 
-function getComputerChoice() {
+function resolveGame() {
+    playerMove = this.playerMove;
+    console.log(playerMove);
+
     let computerRandom = Math.floor(Math.random() * 3);
     if (computerRandom == 0) {
         computerMove = "Rock";
@@ -13,47 +18,36 @@ function getComputerChoice() {
         computerMove = "Scissor";
         console.log(`The computer chose ${computerMove}.`);
     }
-}
 
-function getPlayerSelection() {
-    let playerChoice = prompt("Enter R for Rock, P for Paper, S for Scissor").toLowerCase();
-    
-    if (playerChoice == "r") {
-        playerMove = "Rock";
-        console.log(`You chose ${playerMove}.`);
-    } else if (playerChoice == "p") {
-        playerMove = "Paper";
-        console.log(`You chose ${playerMove}.`);
-    } else if (playerChoice == "s") {
-        playerMove = "Scissor";
-        console.log(`You chose ${playerMove}.`);
-    }  else {
-        console.log("This is not a valid input.")
-    }
-}
-
-function resolveGame() {
     if (computerMove === "Rock" && playerMove === "Paper") {
-        return "You win!";
+        h1_score.textContent= "You win!";
     } else if (computerMove === "Rock" && playerMove === "Scissor") {
-        return "The computer wins!";
+        h1_score.textContent= "The computer wins!";
     } else if (computerMove === "Paper" && playerMove === "Rock") {
-        return "The computer wins!";
+        h1_score.textContent= "The computer wins!";
     } else if (computerMove === "Paper" && playerMove === "Scissor") {
-        return "You win!";
+        h1_score.textContent= "You win!";
     } else if (computerMove === "Scissor" && playerMove === "Rock") {
-        return "You win!";
+        h1_score.textContent= "You win!";
     } else if (computerMove === "Scissor" && playerMove === "Paper") {
-        return "The computer wins!"
+        h1_score.textContent= "The computer wins!"
     } else if (computerMove === playerMove) {
-        return "This is a Draw!";
+        h1_score.textContent= "This is a Draw!";
     } else {
-        return "The game could not be played, enter a valid input."
-    }
+        h1_score.textContent= "The game could not be played, enter a valid input."
+    };
+
+    div_display.appendChild(h1_score);
 }
 
-console.log("Here is a simple (R)ock, (P)aper, (S)cissor game.");
+const btn_rock = document.getElementById("btn-rock");
+btn_rock.playerMove = 'Rock';
+btn_rock.addEventListener('click', resolveGame);
 
-getPlayerSelection();
-getComputerChoice();
-console.log(resolveGame());
+const btn_paper = document.getElementById("btn-paper");
+btn_paper.playerMove = 'Paper';
+btn_paper.addEventListener('click', resolveGame);
+
+const btn_scissor = document.getElementById("btn-scissor");
+btn_scissor.playerMove = 'Scissor';
+btn_scissor.addEventListener('click', resolveGame);
