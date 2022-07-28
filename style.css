@@ -12,9 +12,14 @@ body {
 }
 
 #score-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 100px;
     margin-top: 100px;
-    height: 200px;
 }
+
 
 .player-buttons {
     display: flex;
@@ -43,4 +48,11 @@ img:hover {
 h1 {
     color: whitesmoke;
     text-align: center;
+}
+
+h3 {
+    color: whitesmoke;
+    text-align: center;
+    padding-left: 200px;
+    padding-right: 200px;
 }
